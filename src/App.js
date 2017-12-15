@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title'
+import StudentsContainer from './students/StudentsContainer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title content="Evaluation Tool"/>
+        <StudentsContainer students = { [] } />
       </div>
     );
   }

@@ -4,7 +4,7 @@ import App from './App';
 import { shallow } from 'enzyme'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
-import Title from './components/Title'
+import StudentsContainer from './students/StudentsContainer'
 
 
 chai.use(chaiEnzyme())
@@ -21,11 +21,11 @@ describe('<App />', () => {
     expect(app).to.have.tagName('div')
   })
 
-  it('contains a Title', () => {
-    expect(app).to.have.descendants(Title)
+  it('wraps everything in a div tag', () => {
+    expect(app).to.have.tagName('div')
+  })
+  it('contains the StudentsContainer', () => {
+    expect(app).to.have.descendants(StudentsContainer)
   })
 
-  it('sets the Title to "Evaluation Tool"', () => {
-    expect(app).to.contain(<Title content="Evaluation Tool" />)
-  })
 })
