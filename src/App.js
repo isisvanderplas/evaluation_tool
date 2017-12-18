@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Title from './components/Title'
-import StudentsContainer from './students/StudentsContainer'
+import Routes from './routes'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <StudentsContainer students = { [] } />
+      <div>
+        <Routes />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+
+const App = () => (
+  <MuiThemeProvider>
+    <MyAwesomeReactComponent />
+  </MuiThemeProvider>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
+
+export default App
